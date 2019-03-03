@@ -8,7 +8,7 @@
 :root {
     --yellow: #ffc914;
     --grey: #b5c2b7;
-    --black: rbg(46, 40, 42);
+    --black: rgb(46, 40, 42);
     --blue: #00a7e1;
     --cream: #eddea4;
     --white: rgb(245, 243, 245);
@@ -100,4 +100,65 @@ body {
     height: 100%;
     background: rgba(245, 243, 245, 0.3);
     z-index: 2;
+}
+
+/* nav */
+
+.navBtn {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 3rem;
+    color: var(--yellow);
+    z-index: 3;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transorm: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(255, 201, 20, 0.5);
+    z-index: 4;
+    width: 0;
+    overflow: hidden;
+    transition: all 0.5s linear;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav__single-link {
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.5s linear;
+    text-transform: capitalize;
+}
+
+.nav__single-link:hover {
+    background: var(--black);
+    color: var(--yellow);
+    padding-left: 1.5rem;
+}
+
+.nav--show {
+    width: 10rem;
 }
