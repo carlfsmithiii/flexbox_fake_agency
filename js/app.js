@@ -20,6 +20,7 @@ $(document).ready(function() {
         .pause();
     }
   });
+  // magnific popup
   $("#projects__modal").magnificPopup({
     delegate: "a", // child items selector, by clicking on it popup will open
     type: "image",
@@ -28,5 +29,22 @@ $(document).ready(function() {
       enabled: true
     }
     // other options
+  });
+
+  // accordion
+  $(".accordion__btn").click(function() {
+    $(".accordion__btn")
+      .not(this)
+      .removeClass("rotate");
+    $(".accordion__btn")
+      .not(this)
+      .parent()
+      .next()
+      .slideUp();
+    $(this).toggleClass("rotate");
+    $(this)
+      .parent()
+      .next()
+      .slideToggle();
   });
 });
